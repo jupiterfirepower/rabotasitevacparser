@@ -1,14 +1,8 @@
-#include <fstream>
-#include <iomanip>
 #include <iostream>
-#include <algorithm>
+#include <sstream>
+#include <clocale>
+#include <chrono>
 #include <gumbo.h>
-#include <functional>
-#include <cctype>
-#include <locale>
-#include <vector>
-#include <list>
-#include <stdio.h>
 #include "Gumbo.hpp"
 #include "stringext.hpp"
 #include "gumboparser.hpp"
@@ -16,13 +10,6 @@
 #include "utility.hpp"
 #include "webresource.hpp"
 #include "entities.h"
-#include <regex>
-#include <sstream>
-#include <codecvt>
-#include <clocale>
-#include <chrono>
-#include "Document.h"
-#include "Node.h"
 
 using namespace std;
 using namespace chrono;

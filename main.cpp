@@ -36,7 +36,7 @@ using std::ostringstream;
 template<typename T>
 void printError(T& ex) noexcept(is_base_of<exception, T>::value)
 {
-    std::cerr << ex.what() << endl;
+    std::wcerr << ex.what() << endl;
 }
 
 int main(int argc, char *argv[])
@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
     }
     catch (...)
     {
-	std::cerr << "error ..." << endl;
+	std::wcerr << "error ..." << endl;
     }
 
     return 0;

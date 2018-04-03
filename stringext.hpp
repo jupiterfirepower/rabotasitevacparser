@@ -99,4 +99,4 @@ static auto toWideString(const string str)
     return wstr;
 }
 
-#endif    
+#endif

@@ -31,13 +31,32 @@ int main(int argc, char *argv[])
     setlocale(LC_ALL, "Russian");
     std::list<vacancy> vac_list;
 
+    int regionId;
+    std::string searchKeys = "";
+
+    if(argc < 2)
+    {
+	std::wcout << L"Usage: [parsevac regionId searchKey] eaxample: parsevac 1 C#" << std::endl;
+        std::wcout << L"Used default parameters: regionId = 1, searchKeys = C++" << std::endl;
+        regionId = 1;
+	searchKeys = "C++";
+    }
+    else
+    {
+        regionId = is_number(argv[0]) ? std::atoi(argv[0]) : 1;
+        for(int i = 1; i < argc; i++)
+	{
+	    searchKeys += std::string(argv[i]);
+	}
+    }
+
     try
     {
 	Resource::SiteRabota rb;
 	// Get starting timepoint
 	const auto start = high_resolution_clock::now();
 
-	auto result = rb.searchVacancies();
+	auto result = rb.searchVacancies(regionId, searchKeys);
 
         std::wcout << std::endl << L"Vacancy Short List Size : "<< result.size() << std::endl;
 	//auto tmplist = first_n(result, 50);

@@ -108,7 +108,7 @@ class HttpRestClient
     public:
         auto getPageByUrl(const std::string& url)
         {
-            std::function<std::string (const std::string&)> f = std::bind(&HttpRestClient::wrapGetPageByUrl, this, url);
+            //std::function<std::string (const std::string&)> f = std::bind(&HttpRestClient::wrapGetPageByUrl, this, url);
             return retry<std::string>(std::bind(&HttpRestClient::wrapGetPageByUrl, this, url), url);
         }       
         auto getJsonValueByUrl(const std::string& url)

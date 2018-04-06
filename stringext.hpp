@@ -32,7 +32,7 @@ static string& trim(string&& str, const string& chars = trim_chars)
     return trim(str, chars);
 }
 
-static inline bool is_number(const string& s)
+[[nodiscard]] static inline bool is_number(const string& s)
 {
     return !s.empty() && find_if(s.begin(), 
         s.end(), [](char c) { return !isdigit(c); }) == s.end();
